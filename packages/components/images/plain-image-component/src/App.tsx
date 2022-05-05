@@ -1,18 +1,50 @@
-import React, { useState } from 'react'
-import logo from './logo.svg'
-import styled from 'styled-components'
+import React, { useState } from "react";
+import styled, { css } from "styled-components";
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  const Title = styled.h1`
-    color: red;
-  `;
-  return (
-    <div className="App">
-      image component
-    </div>
-  )
+type Props = {
+  src?: string;
+  link?: string;
+  width?: number;
+  height?: number;
+};
+interface ComponentStylesProps {
+  width?: number | string,
+  height?: number | string,
+  isCenter?: boolean,
+  src?: string,
 }
 
-export default App
+
+const Border = styled.div<ComponentStylesProps>`
+  border: 1px solid #ccc;
+  width: ${ props => `${props.width}px`};
+  height: ${ props => `${props.height}px` };
+  max-width: ${ props => `${props.width}px`};
+  max-height: ${ props => `${props.height}px` };
+  background: ${ props => props.src? `url(${props.src})` : ''};
+  background-size: contain;
+  ${props => props.isCenter && css`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+`}
+`;
+
+function App(props: Props) {
+  const { src, link, width = 120, height = 120 } = props;
+
+  if (!src)
+    return (
+      <Border width={width} height={height} isCenter={true}>请上传图片</Border>
+    );
+
+  return (
+      <Border width={width} height={height} src={src}>
+        <a href={link} target="__blank" style={{cursor: 'default'}}>
+        </a>
+      </Border>
+  );
+}
+
+export default App;

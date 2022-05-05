@@ -461,6 +461,10 @@
     // },
     // 
     {
+      "packageName": "@my-low-code/renderer",
+      "projectFolder": "packages/renderer"
+    },
+    {
       "packageName": "@my-low-code/platform-consumer",
       "projectFolder": "packages/platform-consumer"
     },

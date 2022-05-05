@@ -1,6 +1,6 @@
 <template lang="">
-  <a :href="props.link" target="__blank">
-    <img :src="props.src" class="my-low-code-plain-components-image" />
+  <a :href="link" target="__blank">
+    <img :src="src" class="my-low-code-plain-components-image" />
   </a>
 </template>
 <script lang="ts" setup>
