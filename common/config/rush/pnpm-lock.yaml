@@ -83,6 +83,7 @@ importers:
 
   ../../packages/platform-consumer:
     specifiers:
+      '@ant-design/icons': ~4.7.0
       '@formily/antd': ~2.0.20
       '@formily/core': ~2.0.20
       '@formily/react': ~2.0.20
@@ -106,7 +107,8 @@ importers:
       typescript: ^4.6.3
       vite: ^2.9.5
     dependencies:
-      '@formily/antd': 2.0.20_d6dc967767ea53752aac5eecb5fdb824
+      '@ant-design/icons': 4.7.0_react-dom@18.0.0+react@18.0.0
+      '@formily/antd': 2.0.20_a6f9dfdd5ff1dcf87917ffe99f7f2322
       '@formily/core': 2.0.20
       '@formily/react': 2.0.20_98695a0b622ec55a407f580fdc5f1948
       '@my-low-code/basic-components': link:../components/basic-components
@@ -1460,7 +1462,7 @@ packages:
     resolution: {integrity: sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==}
     dev: false
 
-  /@formily/antd/2.0.20_d6dc967767ea53752aac5eecb5fdb824:
+  /@formily/antd/2.0.20_a6f9dfdd5ff1dcf87917ffe99f7f2322:
     resolution: {integrity: sha512-bUfbuqFJXTrkLNh8op2aeByQH+uBwoC1o9RU78INJ8G9DWqh7j27aMo/BWeTMgxZo6PvTDlPShzGh2lG12EQ/Q==}
     engines: {npm: '>=3.0.0'}
     peerDependencies:
@@ -1477,6 +1479,7 @@ packages:
       '@types/react-dom':
         optional: true
     dependencies:
+      '@ant-design/icons': 4.7.0_react-dom@18.0.0+react@18.0.0
       '@formily/core': 2.0.20
       '@formily/grid': 2.0.20_typescript@4.6.4
       '@formily/json-schema': 2.0.20_typescript@4.6.4

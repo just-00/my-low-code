@@ -9,7 +9,7 @@ const HomeReducer = (
     payload: any;
   }
 ): HomeContextType => {
-  const { payload } = action
+  const { payload } = action;
   switch (action.type) {
     case HOME_ACTION.ADD_GALLERY_ACTION:
       return produce(preState, (draft) => {
@@ -20,13 +20,19 @@ const HomeReducer = (
       });
     case HOME_ACTION.SET_CURRENT_GALLERY_ACTION:
       return produce(preState, (draft) => {
-        draft.currentGallery = payload
+        draft.currentGallery = payload;
       });
     case HOME_ACTION.UPDATE_GALLERY_FORM_ACTION:
       return produce(preState, (draft) => {
-        const current = draft.galleryWithFormList.find(item => item.id === payload.id);
+        const current = draft.galleryWithFormList.find(
+          (item) => item.id === payload.id
+        );
         current!.formConfig = payload.formConfig;
-      }); 
+      });
+    case HOME_ACTION.DELETE_GALLERY_ACTION:
+      return produce(preState, (draft) => {
+        draft.galleryWithFormList.splice(payload, 1);
+      });
     default:
       return preState;
   }

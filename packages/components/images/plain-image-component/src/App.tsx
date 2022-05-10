@@ -17,10 +17,10 @@ interface ComponentStylesProps {
 
 const Border = styled.div<ComponentStylesProps>`
   border: 1px solid #ccc;
-  width: ${ props => `${props.width}px`};
-  height: ${ props => `${props.height}px` };
-  max-width: ${ props => `${props.width}px`};
-  max-height: ${ props => `${props.height}px` };
+  width: ${ props => `${props.width}`};
+  height: ${ props => `${props.height}` };
+  max-width: ${ props => `${props.width}`};
+  max-height: ${ props => `${props.height}` };
   background: ${ props => props.src? `url(${props.src})` : ''};
   background-size: contain;
   ${props => props.isCenter && css`
@@ -32,7 +32,7 @@ const Border = styled.div<ComponentStylesProps>`
 `;
 
 function App(props: Props) {
-  const { src, link, width = 120, height = 120 } = props;
+  const { src, link, width = '120px', height = '120px' } = props;
 
   if (!src)
     return (

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import cn from 'classnames'
+import classnames from 'classnames'
 import { GalleryList } from "../../constants/Gallery";
 import HomeContext from "../../context";
 import { HOME_ACTION } from "../../reducer/action";
@@ -22,7 +22,7 @@ export const GalleryComponent = () => {
         {GalleryList.map(({ title }, index) => (
           <div
             key={title}
-            className={cn(`whitespace-nowrap cursor-pointer text-center
+            className={classnames(`whitespace-nowrap cursor-pointer text-center
               mb-3 px-10 py-2 rounded-sm hover:brightness-150`,
             {
               "bg-primary": currentTab === index,
